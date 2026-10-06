@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8f7f3">
+    <meta name="description" content="Discover independent labels, everyday essentials, and considered fashion at Common Ground.">
+    <title>Common Ground — Good things, well chosen.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="announcement-bar">A little something extra: free delivery on orders over $75 <span>✳</span></div>
+
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+            <div class="container-fluid site-container">
+                <a class="navbar-brand wordmark" href="#home" aria-label="Common Ground home">common<span>ground</span><sup>®</sup></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto nav-links">
+                        <li class="nav-item"><a class="nav-link" href="#shop" data-nav-filter="All">Shop all</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#shop" data-nav-filter="Women">Women</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#shop" data-nav-filter="Men">Men</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#brands">Our labels</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#story">Our story</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <form class="search-box" role="search" id="searchForm">
+                            <i class="bi bi-search" aria-hidden="true"></i>
+                            <input type="search" id="searchInput" placeholder="Search the good stuff" aria-label="Search products">
+                        </form>
+                        <button class="icon-button cart-trigger" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartPanel" aria-controls="cartPanel" aria-label="Open shopping bag">
+                            <i class="bi bi-bag" aria-hidden="true"></i><span class="cart-count" id="cartCount">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section class="hero-section">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> A little more you, every day</p>
+                <h1>Good things.<br><span>Well chosen.</span></h1>
+                <p class="hero-description">Independent labels, everyday favorites, and the pieces you’ll keep reaching for.</p>
+                <a class="button-dark" href="#shop">Find your thing <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                <div class="hero-note"><span class="note-star">✳</span><span>Thoughtful finds<br>from the brands we love</span></div>
+            </div>
+            <div class="hero-image-wrap">
+                <img class="hero-image" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1500&q=85" alt="Model wearing a contemporary neutral outfit">
+                <div class="hero-image-tag"><span>01 / 03</span><span>New season, new energy</span></div>
+                <div class="hero-sticker"><span>Wear<br>what<br>moves you</span><i class="bi bi-arrow-down-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="hero-index">CURATED IN CAMBODIA <span>—</span> WORN EVERYWHERE</div>
+        </section>
+
+        <section class="brand-strip" id="brands" aria-label="Featured brands">
+            <span class="brand-intro">GOOD COMPANY</span>
+            <span class="brand-name brand-serif">SUNDAY CLUB</span>
+            <span class="brand-name brand-wide">FORM & FIELD</span>
+            <span class="brand-name brand-italic">little rituals</span>
+            <span class="brand-name brand-serif">NŌRTH</span>
+            <span class="brand-name brand-wide">STUDIO ELSE</span>
+        </section>
+
+        <section class="shop-section" id="shop">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow"><span class="eyebrow-dot"></span> The good edit</p>
+                    <h2>Made for <span>real life.</span></h2>
+                </div>
+                <a href="#shop" class="text-link" id="clearFilters">See everything <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="shop-toolbar">
+                <div class="filter-list" role="group" aria-label="Filter products by category">
+                    <button class="filter-button active" data-filter="All" type="button">Everything <span>08</span></button>
+                    <button class="filter-button" data-filter="Women" type="button">Women</button>
+                    <button class="filter-button" data-filter="Men" type="button">Men</button>
+                    <button class="filter-button" data-filter="Accessories" type="button">Accessories</button>
+                </div>
+                <label class="sort-control" for="sortSelect"><span>Sort:</span>
+                    <select id="sortSelect" aria-label="Sort products">
+                        <option value="featured">Featured</option>
+                        <option value="low">Price: low to high</option>
+                        <option value="high">Price: high to low</option>
+                    </select>
+                </label>
+            </div>
+            <div class="row g-3 g-md-4 product-grid" id="productGrid" aria-live="polite"></div>
+            <p class="empty-state d-none" id="emptyState">No finds here just yet. Try another search.</p>
+            <div class="shop-bottom"><span>GOOD FINDS. NO BIG DEAL.</span><a href="#home">Back to the top <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div>
+        </section>
+
+        <section class="story-section" id="story">
+            <div class="story-image"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1100&q=85" alt="A thoughtful, everyday street style look" loading="lazy"><span class="image-caption">GOOD CLOTHES, GOOD FEELING.</span></div>
+            <div class="story-copy"><p class="eyebrow"><span class="eyebrow-dot"></span> A shop with a point of view</p><h2>More than a label.<br><span>A feeling.</span></h2><p>We bring independent names and familiar favorites into one place. Every piece earns its spot: easy to wear, good to live in, and a little different from the usual.</p><a href="#brands" class="text-link">Meet our labels <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><div class="story-mark">cg<span>®</span></div></div>
+        </section>
+
+        <section class="newsletter-section">
+            <div><p class="eyebrow"><span class="eyebrow-dot"></span> Notes from the good side</p><h2>A good thing,<br><span>now and then.</span></h2><p>New drops, small surprises, and the occasional note from us.</p></div>
+            <form id="newsletterForm" class="newsletter-form"><label for="newsletterEmail" class="visually-hidden">Email address</label><input type="email" id="newsletterEmail" placeholder="Your email address" required><button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right" aria-hidden="true"></i></button><small id="newsletterMessage">No noise. Unsubscribe whenever.</small></form>
+        </section>
+    </main>
+
+    <footer class="site-footer"><a class="wordmark footer-wordmark" href="#home">common<span>ground</span><sup>®</sup></a><p>Good things, well chosen. Phnom Penh & everywhere.</p><div class="footer-links"><a href="#shop">Shop</a><a href="#story">About</a><a href="mailto:hello@commonground.shop">Contact</a><span>© 2026 Common Ground</span></div></footer>
+
+    <div class="offcanvas offcanvas-end cart-panel" tabindex="-1" id="cartPanel" aria-labelledby="cartTitle">
+        <div class="offcanvas-header"><div><p class="eyebrow"><span class="eyebrow-dot"></span> Your good finds</p><h2 class="offcanvas-title" id="cartTitle">Your bag <span id="cartTitleCount">(0)</span></h2></div><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close bag"></button></div>
+        <div class="offcanvas-body"><div id="cartItems" class="cart-items"></div><div class="cart-empty" id="cartEmpty"><i class="bi bi-bag-heart" aria-hidden="true"></i><p>Your bag is taking it easy.</p><button type="button" class="button-dark" data-bs-dismiss="offcanvas">Find something good</button></div></div>
+        <div class="cart-footer d-none" id="cartFooter"><div class="cart-subtotal"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div><p>Shipping and any applicable taxes are calculated at checkout.</p><button type="button" id="checkoutButton" class="button-dark checkout-button">Continue to checkout <i class="bi bi-arrow-right" aria-hidden="true"></i></button></div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="cartToast" class="toast shop-toast" role="status" aria-live="polite" aria-atomic="true"><div class="toast-body"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span id="toastMessage">Added to your bag</span><button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close"></button></div></div></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const products = [
+            { id: 1, name: 'The Easy Linen Shirt', brand: 'Sunday Club', category: 'Women', price: 48, badge: 'JUST LANDED', color: 'Sand', image: 'photo-1598554747436-c9293d6a588f' },
+            { id: 2, name: 'Everyday Canvas Tote', brand: 'Form & Field', category: 'Accessories', price: 32, badge: 'A GOOD ONE', color: 'Natural', image: 'photo-1590874103328-eac38a683ce7' },
+            { id: 3, name: 'Weekend Knit Polo', brand: 'Studio Else', category: 'Men', price: 56, badge: '', color: 'Olive', image: 'photo-1618354691373-d851c5c3a990' },
+            { id: 4, name: 'The Day-Off Sneaker', brand: 'Nōrth', category: 'Men', price: 72, badge: 'BESTSELLER', color: 'Chalk', image: 'photo-1542291026-7eec264c27ff' },
+            { id: 5, name: 'Soft Shape Shoulder Bag', brand: 'Little Rituals', category: 'Accessories', price: 64, badge: '', color: 'Cherry', image: 'photo-1584917865442-de89df76afd3' },
+            { id: 6, name: 'Sunday Cotton Tee', brand: 'Sunday Club', category: 'Women', price: 29, badge: 'JUST LANDED', color: 'Cloud', image: 'photo-1521572163474-6864f9cf17ab' },
+            { id: 7, name: 'The Anywhere Trouser', brand: 'Form & Field', category: 'Men', price: 68, badge: '', color: 'Stone', image: 'photo-1473966968600-fa801b869a1a' },
+            { id: 8, name: 'Little Gold Hoops', brand: 'Little Rituals', category: 'Accessories', price: 38, badge: 'A GOOD ONE', color: 'Gold', image: 'photo-1535632066927-ab7c9ab60908' }
+        ];
+
+        let activeFilter = 'All';
+        let cart = JSON.parse(localStorage.getItem('commonground-cart') || '{}');
+        const productGrid = document.getElementById('productGrid');
+        const money = amount => `$${amount.toFixed(2)}`;
+
+        function renderProducts() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            let visibleProducts = products.filter(product => {
+                const matchesCategory = activeFilter === 'All' || product.category === activeFilter;
+                const matchesSearch = `${product.name} ${product.brand} ${product.category} ${product.color}`.toLowerCase().includes(query);
+                return matchesCategory && matchesSearch;
+            });
+            const sort = document.getElementById('sortSelect').value;
+            if (sort === 'low') visibleProducts.sort((a, b) => a.price - b.price);
+            if (sort === 'high') visibleProducts.sort((a, b) => b.price - a.price);
+
+            productGrid.innerHTML = visibleProducts.map(product => `
+                <article class="col-6 col-lg-3 product-column">
+                    <div class="product-card">
+                        <div class="product-image-wrap">
+                            <img src="https://images.unsplash.com/${product.image}?auto=format&fit=crop&w=750&q=80" alt="${product.name} in ${product.color}" loading="lazy">
+                            ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                            <button class="quick-add" type="button" data-add="${product.id}" aria-label="Add ${product.name} to bag"><i class="bi bi-plus-lg" aria-hidden="true"></i><span>Add to bag</span></button>
+                        </div>
+                        <div class="product-info"><div><p class="product-brand">${product.brand}</p><h3>${product.name}</h3></div><span class="product-price">${money(product.price)}</span></div>
+                        <p class="product-color"><span></span>${product.color}</p>
+                    </div>
+                </article>`).join('');
+            document.getElementById('emptyState').classList.toggle('d-none', visibleProducts.length !== 0);
+        }
+
+        function renderCart() {
+            const entries = Object.entries(cart).filter(([, quantity]) => quantity > 0);
+            const count = entries.reduce((total, [, quantity]) => total + quantity, 0);
+            const subtotal = entries.reduce((total, [id, quantity]) => total + products.find(product => product.id === Number(id)).price * quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+            document.getElementById('cartTitleCount').textContent = `(${count})`;
+            document.getElementById('cartItems').innerHTML = entries.map(([id, quantity]) => {
+                const product = products.find(item => item.id === Number(id));
+                return `<article class="cart-item"><img src="https://images.unsplash.com/${product.image}?auto=format&fit=crop&w=220&q=75" alt=""><div class="cart-item-info"><p class="product-brand">${product.brand}</p><h3>${product.name}</h3><span>${money(product.price)}</span><div class="quantity-control"><button type="button" data-quantity="${id}" data-change="-1" aria-label="Remove one ${product.name}"><i class="bi bi-dash" aria-hidden="true"></i></button><span>${quantity}</span><button type="button" data-quantity="${id}" data-change="1" aria-label="Add one ${product.name}"><i class="bi bi-plus" aria-hidden="true"></i></button></div></div><button type="button" class="remove-item" data-remove="${id}" aria-label="Remove ${product.name}"><i class="bi bi-trash3" aria-hidden="true"></i></button></article>`;
+            }).join('');
+            document.getElementById('cartEmpty').classList.toggle('d-none', count > 0);
+            document.getElementById('cartFooter').classList.toggle('d-none', count === 0);
+            document.getElementById('cartSubtotal').textContent = money(subtotal);
+            localStorage.setItem('commonground-cart', JSON.stringify(cart));
+        }
+
+        function addToCart(id) {
+            cart[id] = (cart[id] || 0) + 1;
+            renderCart();
+            document.getElementById('toastMessage').textContent = `${products.find(product => product.id === id).name} added to your bag`;
+            bootstrap.Toast.getOrCreateInstance(document.getElementById('cartToast'), { delay: 2400 }).show();
+        }
+
+        document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+            activeFilter = button.dataset.filter;
+            document.querySelectorAll('[data-filter]').forEach(item => item.classList.toggle('active', item === button));
+            renderProducts();
+        }));
+        document.querySelectorAll('[data-nav-filter]').forEach(link => link.addEventListener('click', () => {
+            activeFilter = link.dataset.navFilter;
+            document.querySelectorAll('[data-filter]').forEach(button => button.classList.toggle('active', button.dataset.filter === activeFilter));
+            renderProducts();
+        }));
+        document.getElementById('clearFilters').addEventListener('click', event => {
+            event.preventDefault();
+            activeFilter = 'All';
+            document.getElementById('searchInput').value = '';
+            document.querySelectorAll('[data-filter]').forEach(button => button.classList.toggle('active', button.dataset.filter === 'All'));
+            renderProducts();
+        });
+        document.getElementById('productGrid').addEventListener('click', event => {
+            const button = event.target.closest('[data-add]');
+            if (button) addToCart(Number(button.dataset.add));
+        });
+        document.getElementById('cartItems').addEventListener('click', event => {
+            const quantityButton = event.target.closest('[data-quantity]');
+            const removeButton = event.target.closest('[data-remove]');
+            if (quantityButton) {
+                const id = quantityButton.dataset.quantity;
+                cart[id] = (cart[id] || 0) + Number(quantityButton.dataset.change);
+                if (cart[id] <= 0) delete cart[id];
+                renderCart();
+            }
+            if (removeButton) {
+                delete cart[removeButton.dataset.remove];
+                renderCart();
+            }
+        });
+        document.getElementById('searchForm').addEventListener('submit', event => event.preventDefault());
+        document.getElementById('searchInput').addEventListener('input', renderProducts);
+        document.getElementById('sortSelect').addEventListener('change', renderProducts);
+        document.getElementById('newsletterForm').addEventListener('submit', event => {
+            event.preventDefault();
+            document.getElementById('newsletterMessage').textContent = 'You’re on the list. Talk soon!';
+            event.currentTarget.reset();
+        });
+        document.getElementById('checkoutButton').addEventListener('click', () => {
+            document.getElementById('toastMessage').textContent = 'Checkout is a demo. Your bag is saved for later.';
+            bootstrap.Toast.getOrCreateInstance(document.getElementById('cartToast'), { delay: 3200 }).show();
+        });
+
+        renderProducts();
+        renderCart();
+    </script>
+</body>
+</html>
